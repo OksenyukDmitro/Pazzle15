@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <com.example.a123.pazzle15.SquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="*"
+            android:layout_marginTop="@dimen/btnSize"
+            >
+
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/button11"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+
+                <Button
+                    android:id="@+id/button12"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+
+                <Button
+                    android:id="@+id/button13"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+
+                <Button
+                    android:id="@+id/button14"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/button21"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+
+                <Button
+                    android:id="@+id/button22"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+
+                <Button
+                    android:id="@+id/button23"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+
+                <Button
+                    android:id="@+id/button24"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/button31"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+
+                <Button
+                    android:id="@+id/button32"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+
+                <Button
+                    android:id="@+id/button33"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+
+                <Button
+                    android:id="@+id/button34"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+            </TableRow>
+
+            <TableRow>
+
+                <Button
+                    android:id="@+id/button41"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+
+                <Button
+                    android:id="@+id/button42"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+
+                <Button
+                    android:id="@+id/button43"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+
+                <Button
+                    android:id="@+id/button44"
+                    android:layout_width="@dimen/btnSize"
+                    android:layout_height="@dimen/btnSize" />
+            </TableRow>
+        </TableLayout>
+
+    </com.example.a123.pazzle15.SquareLayout>
+
+    <Button
+        android:id="@+id/restartGame"
+        style="@style/MyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="restartTable"
+        android:text="@string/gameRestart" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/saveGame"
+            style="@style/MyButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/laySize"
+            android:layout_weight="1"
+            android:onClick="SaveArray"
+            android:text="@string/saveArray" />
+
+        <Button
+            android:id="@+id/loadGame"
+            style="@style/MyButton"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/laySize"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/laySize"
+            android:layout_weight="1"
+            android:onClick="LoadArray"
+            android:text="@string/loadArray" />
+
+    </LinearLayout>
+
+</LinearLayout>

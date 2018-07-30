@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Pazzle15</string>
+    <string name="gameRestart">Нова гра</string>
+    <string name="saveArray">Зберегти гру</string>
+    <string name="loadArray">Відновити збережену гру</string>
+    <string name="landLoadArray">Відновити \nзбережену гру</string>
+    <string name="title_activity_test_web">testWeb</string>
+
+</resources>
