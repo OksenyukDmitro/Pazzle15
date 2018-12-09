@@ -1,28 +1,49 @@
 package com.example.a123.pazzle15;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.SyncStateContract;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
+import android.view.MenuItem;
 import java.util.Arrays;
 import java.util.Random;
 
 
-public class FifteenActivity extends Activity {
+public class FifteenActivity extends AppCompatActivity {
     private Button[][] buttons = new Button[4][4];
     private int[][] array = new int[4][4];
     private Point emptySpace = new Point();
     private int[][] reqArray = new int[4][4];
-    private static final String TAGi = "myI";
-    private static final String TAGa = "myA";
-    private static final String TAGj = "myJ";
     private int[] btnArray = new int[16];
 
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.main);
+        initArray();
+        generateArray();
+        paintTable();
+        setListenersOnButtons();
+        Toolbar toolbar = findViewById(R.id.toolbars);
+        setSupportActionBar(toolbar);
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return true;
+    }
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -49,17 +70,7 @@ public class FifteenActivity extends Activity {
         restart();
 }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.second);
-        initArray();
-        generateArray();
-        paintTable();
-        setListenersOnButtons();
 
-
-    }
     private void save() {
 
         for (int i = 0, v = 0; i < 4; i++ )
@@ -269,9 +280,12 @@ public class FifteenActivity extends Activity {
 
     public void restartTable(View view) {
 
-            Button button = buttons[emptySpace.x][emptySpace.y];
-            button.setVisibility(View.VISIBLE);
-            paintTable();
+
+
+         //  Button button = buttons[emptySpace.x][emptySpace.y];
+        buttons[emptySpace.x][emptySpace.y].setVisibility(View.VISIBLE);
+          // button.setVisibility(View.VISIBLE);
+          paintTable();
     }
 
 
@@ -285,11 +299,9 @@ public class FifteenActivity extends Activity {
         for(int i=0; i < btnArray.length; i++)
             editor.putInt("MyArray"+i, btnArray[i]);
         editor.commit();
+        editor.apply();
 
-        //Log.d("STR", str.toString());
-        Log.d("Array", String.valueOf(btnArray));
-
-       Toast toast = Toast.makeText(this, "Save", Toast.LENGTH_SHORT);
+       Toast toast = Toast.makeText(this, R.string.save, Toast.LENGTH_SHORT);
              toast.show();
     }
 
@@ -302,10 +314,23 @@ public class FifteenActivity extends Activity {
             for(int i=0; i < btnArray.length; i++)
                btnArray[i]=settings.getInt("MyArray"+i, 0);
             restart();
-          Toast toast = Toast.makeText(this, "Success", Toast.LENGTH_SHORT);
+          Toast toast = Toast.makeText(this, R.string.success, Toast.LENGTH_SHORT);
             toast.show();
 
     }
 
 
+    public void onClickMenuSetting(MenuItem item) {
+        Toast.makeText(this,"onClickMenuSetting", Toast.LENGTH_LONG).show();
+    }
+
+    public void onClickMenuAboutMe(MenuItem item) {
+        Toast.makeText(this,"onClickMenuAboutMe", Toast.LENGTH_LONG).show();
+
+    }
+
+    public void onClickMenuAboutProgram(MenuItem item) {
+        Toast.makeText(this,"onClickMenuAboutProgram", Toast.LENGTH_LONG).show();
+
+    }
 }

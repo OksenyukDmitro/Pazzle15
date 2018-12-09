@@ -1,9 +1,20 @@
 <resources>
-    <string name="app_name">Pazzle15</string>
-    <string name="gameRestart">Нова гра</string>
-    <string name="saveArray">Зберегти гру</string>
-    <string name="loadArray">Відновити збережену гру</string>
-    <string name="landLoadArray">Відновити \nзбережену гру</string>
-    <string name="title_activity_test_web">testWeb</string>
+    <string name="app_name">Ohne Fleiß kein Preis (Spiel)</string>
+    <string name="gameRestart">New game</string>
+    <string name="saveArray">Save game</string>
+    <string name="loadArray">Restore saved game</string>
+    <string name="landLoadArray">Restore \nsaved game</string>
+    <string name="menuSetting">Setting</string>
+    <string name="menuAboutMe">Developer</string>
+    <string name="menuAboutProgram">About the progaram</string>
+    <string name="save">Save</string>
+    <string name="success">Success!!</string>
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+
+    <!-- Example settings for Data & Sync -->
+
+    <!-- Example settings for Notifications -->
 
 </resources>

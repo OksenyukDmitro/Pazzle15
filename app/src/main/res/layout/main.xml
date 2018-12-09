@@ -1,77 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-   >
+    android:orientation="vertical">
 
-    <android.support.constraint.ConstraintLayout
+
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="50dp"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:visibility="visible">
 
-        <Button
-            android:id="@+id/restartGame"
-            style="@style/MyButton"
-            android:layout_width="120dp"
-            android:layout_height="47dp"
-            android:layout_marginEnd="60dp"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbars"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:visibility="visible"
 
+            />
 
-            android:layout_marginStart="60dp"
-            android:layout_span="4"
-            android:onClick="restartTable"
-            android:text="@string/gameRestart"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/loadGame"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/saveGame"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-
-
-
-        <Button
-            android:id="@+id/loadGame"
-            style="@style/MyButton"
-            android:layout_width="160dp"
-            android:layout_height="47dp"
-            android:onClick="LoadArray"
-            android:text="@string/landLoadArray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/restartGame"
-            tools:layout_editor_absoluteY="0dp"
-            tools:ignore="MissingConstraints" />
-
-        <Button
-            android:id="@+id/saveGame"
-            style="@style/MyButton"
-            android:layout_width="160dp"
-            android:layout_height="47dp"
-            android:onClick="SaveArray"
-            android:text="@string/saveArray"
-            app:layout_constraintEnd_toStartOf="@+id/restartGame"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+    </android.support.design.widget.AppBarLayout>
 
 
     <com.example.a123.pazzle15.SquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="visible">
 
 
         <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:stretchColumns="*"
-
-            >
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/btnSize"
+            android:stretchColumns="*">
 
 
             <TableRow>
@@ -165,13 +131,44 @@
                     android:layout_width="@dimen/btnSize"
                     android:layout_height="@dimen/btnSize" />
             </TableRow>
-            <TableRow>
-
-            </TableRow>
         </TableLayout>
 
     </com.example.a123.pazzle15.SquareLayout>
 
+    <Button
+        android:id="@+id/restartGame"
+        style="@style/MyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="restartTable"
+        android:text="@string/gameRestart" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2">
 
+        <Button
+            android:id="@+id/saveGame"
+            style="@style/MyButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/laySize"
+            android:layout_weight="1"
+            android:onClick="SaveArray"
+            android:text="@string/saveArray" />
+
+        <Button
+            android:id="@+id/loadGame"
+            style="@style/MyButton"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/laySize"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/laySize"
+            android:layout_weight="1"
+            android:onClick="LoadArray"
+            android:text="@string/loadArray" />
+
+    </LinearLayout>
 
 </LinearLayout>

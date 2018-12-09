@@ -23,9 +23,6 @@ public class SquareLayout extends LinearLayout {
         super(context, attrs);
     }
 
-    // This is used to make square layouts.
-
-
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
@@ -33,7 +30,7 @@ public class SquareLayout extends LinearLayout {
         if (widthMeasureSpec < heightMeasureSpec) {
             super.onMeasure(widthMeasureSpec, widthMeasureSpec);
         } else {
-       super.onMeasure(heightMeasureSpec, heightMeasureSpec);
+            super.onMeasure(heightMeasureSpec, heightMeasureSpec);
         }
 
 
